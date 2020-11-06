@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 06, 2020 at 04:32 AM
+-- Generation Time: Nov 06, 2020 at 05:08 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -55,11 +55,11 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(1, '2014_10_12_000000_create_users_table', 1),
-(2, '2014_10_12_100000_create_password_resets_table', 1),
-(3, '2019_08_19_000000_create_failed_jobs_table', 1),
-(4, '2020_11_06_024056_create_products_table', 2),
-(5, '2020_11_06_024200_create_reviews_table', 2);
+(11, '2014_10_12_000000_create_users_table', 1),
+(12, '2014_10_12_100000_create_password_resets_table', 1),
+(13, '2019_08_19_000000_create_failed_jobs_table', 1),
+(14, '2020_11_06_024056_create_products_table', 1),
+(15, '2020_11_06_024200_create_reviews_table', 1);
 
 -- --------------------------------------------------------
 
@@ -86,10 +86,20 @@ CREATE TABLE `products` (
   `price` int(11) NOT NULL,
   `stock` int(11) NOT NULL,
   `discount` int(11) NOT NULL,
-  `user_id` bigint(20) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `detail`, `price`, `stock`, `discount`, `created_at`, `updated_at`) VALUES
+(1, 'Mitchell Wintheiser V', 'Aut ea nam incidunt deleniti. Exercitationem aut sed natus. Vitae quia ut consequuntur qui doloremque neque veniam.', 470, 0, 25, '2020-11-05 22:06:59', '2020-11-05 22:06:59'),
+(2, 'Ms. Leanne Doyle', 'Voluptates voluptatem nobis magni natus ipsam rerum. Distinctio odit ut ea tempora aut ipsa. Sit nisi perspiciatis eum nihil. Modi in consequatur voluptatem excepturi non excepturi et.', 471, 9, 2, '2020-11-05 22:06:59', '2020-11-05 22:06:59'),
+(3, 'Prof. Yazmin Swift PhD', 'At autem et quod in reprehenderit. Et recusandae id doloremque velit.', 735, 1, 29, '2020-11-05 22:06:59', '2020-11-05 22:06:59'),
+(4, 'Mrs. Deanna Prosacco', 'Eos explicabo consequatur consequatur rem deserunt. Quis iusto eos rerum ratione impedit aliquam.', 166, 8, 29, '2020-11-05 22:06:59', '2020-11-05 22:06:59'),
+(5, 'Ashlynn Heidenreich', 'Et qui qui harum aperiam quo nam nobis dicta. Iste amet veritatis quasi. Aut voluptatem libero non similique molestiae accusamus expedita. Ut ab ab quis pariatur cupiditate eos.', 373, 7, 19, '2020-11-05 22:06:59', '2020-11-05 22:06:59');
 
 -- --------------------------------------------------------
 
@@ -107,6 +117,22 @@ CREATE TABLE `reviews` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`id`, `product_id`, `customer`, `review`, `star`, `created_at`, `updated_at`) VALUES
+(1, 4, 'Filomena Lehner', 'Eligendi laborum dolorum minima qui ad ut. Esse cum aut perspiciatis sint. Aut consectetur et eum dignissimos quia. Error inventore quos consectetur qui.', 2, '2020-11-05 22:06:59', '2020-11-05 22:06:59'),
+(2, 1, 'Trystan Hackett', 'Veritatis rem tenetur eos laudantium ullam rem dolor. Nostrum officiis cum assumenda libero esse aut. Quia eligendi at voluptatum omnis rem. Quas et voluptate sed error ratione eum aperiam. Voluptatem dolores voluptates architecto reiciendis consequatur.', 3, '2020-11-05 22:06:59', '2020-11-05 22:06:59'),
+(3, 4, 'Haleigh McClure', 'Illo reprehenderit perferendis odit sapiente nemo. In dolor aut quasi molestiae. Porro rerum aut est sunt. A reiciendis qui blanditiis et nisi nesciunt libero.', 4, '2020-11-05 22:06:59', '2020-11-05 22:06:59'),
+(4, 4, 'Reese Lubowitz', 'Eius et odio sed totam laudantium. Amet non omnis expedita animi.', 3, '2020-11-05 22:06:59', '2020-11-05 22:06:59'),
+(5, 1, 'Dr. Alvena Hirthe II', 'Alias neque nihil corporis quibusdam. Et et est rerum eius. Tempore unde voluptatibus sed quis quaerat voluptate veritatis. Doloremque labore neque quibusdam.', 0, '2020-11-05 22:06:59', '2020-11-05 22:06:59'),
+(6, 3, 'Carson Deckow', 'Ratione qui laudantium inventore ratione tempora distinctio. Officiis necessitatibus quisquam nihil velit ut qui et. Et similique iusto possimus sed aut. Et et velit molestiae inventore ut.', 4, '2020-11-05 22:06:59', '2020-11-05 22:06:59'),
+(7, 4, 'Aurore Smitham', 'Sed ipsum qui at quia minus autem. Illum delectus et suscipit mollitia explicabo.', 0, '2020-11-05 22:06:59', '2020-11-05 22:06:59'),
+(8, 3, 'Bryana Mann PhD', 'Omnis nihil qui error cum. Fugit praesentium voluptatum soluta qui vitae voluptatum quas ducimus. Dolorem at sint consequatur dolore excepturi fugiat. Nam corrupti ut aut blanditiis omnis hic similique possimus. Unde corrupti accusantium eaque ut hic.', 0, '2020-11-05 22:06:59', '2020-11-05 22:06:59'),
+(9, 3, 'Leora Olson', 'Corporis alias ducimus aut laboriosam officiis repellat dolores. At voluptas corporis aut veritatis praesentium. Rerum animi eos nam aut nostrum sapiente.', 1, '2020-11-05 22:06:59', '2020-11-05 22:06:59'),
+(10, 5, 'Buford Schaefer', 'Facilis enim sequi veniam facere consequatur. Enim veniam provident officiis. Quidem ut architecto qui adipisci illum facilis hic. Est accusamus enim animi voluptates nemo.', 5, '2020-11-05 22:06:59', '2020-11-05 22:06:59');
+
 -- --------------------------------------------------------
 
 --
@@ -123,14 +149,6 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Md. Abdur Rahman', 'mukul.arahman@gmail.com', NULL, 'abc123', NULL, '2020-11-05 16:39:19', NULL),
-(2, 'Khalid Farhan', 'khalidfo@gmail.com', NULL, 'ajsfkjsd', NULL, '2020-11-05 17:26:23', NULL);
 
 --
 -- Indexes for dumped tables
@@ -159,8 +177,7 @@ ALTER TABLE `password_resets`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `products_user_id_foreign` (`user_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `reviews`
@@ -190,35 +207,29 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `products`
---
-ALTER TABLE `products`
-  ADD CONSTRAINT `products_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
 -- Constraints for table `reviews`
