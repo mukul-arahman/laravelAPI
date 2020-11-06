@@ -14,8 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('users', 'App\Http\Controllers\UserController');
-
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::group(['namespace' => 'App\Http\Controllers'], function () {
+    Route::apiResource('products', 'ProductController');
+
+    Route::group(['prefix' => 'products'], function () {
+        Route::apiResource('/{product}/reviews', 'ReviewController');
+    });
 });
