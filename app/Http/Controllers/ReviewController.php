@@ -14,7 +14,8 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+        $reviews = Review::findOrFail(4)->product;
+        return $reviews;
     }
 
     /**

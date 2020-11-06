@@ -14,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return 'product';
+        $product = Product::findOrFail(5)->reviews;
+        return $product;
     }
 
     /**
