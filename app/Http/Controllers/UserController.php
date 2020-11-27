@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Resources\UserCollection;
 use App\Http\Resources\User as UserResource;
+
 class UserController extends Controller
 {
     /**
